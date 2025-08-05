@@ -13,7 +13,7 @@ const navItems = [
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
     useEffect(() => {
@@ -59,7 +59,9 @@ export const Navbar = () => {
                 <button 
                     onClick={() => setIsMenuOpen((prev) => !prev)}
                     className="md:hidden p-2 text-foreground z-50"
-                > {isMenuOpen ?  <X size={24} /> : <Menu size={24} />} </button>
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                > {isMenuOpen ?  <X size={24} /> : <Menu size={24} />} 
+                </button>
 
                 <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
                     "transition-all duration-300 md:hidden",
