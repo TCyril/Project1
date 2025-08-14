@@ -1,8 +1,31 @@
     import { Contact, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
     import { cn } from '@/lib/utils'
+    import { useToast } from "@/hooks/use-toast";
+    import React from "react";
+    import { useState } from "react";
 
 
     export const ContactSection = () => {
+        const { toast } = useToast();
+        const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+
+            setIsSubmitting(true);
+
+            setTimeout(() => {
+                toast({
+                    title: "Message Sent",
+                    description: "Thank you for reaching out! I will get back to you soon.",
+                })
+
+            setIsSubmitting(false);
+            }, 1500);
+
+        }
+
         return (
             <section id="contact"
                 className="py-24 px-4 relative bg-secondary/30"
@@ -19,7 +42,7 @@
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                         
-                    {/*Contac Information*/}
+                    {/*Contact Information*/}
                         <div className="space-y-8">
                             <h3 className="text-2xl font-semibold mb-6 ">Contact Information</h3>
                             <div className="space-y-6 justify-center">
@@ -77,7 +100,7 @@
                         </div>
 
                     {/**/}
-                        <div className="bg-card p-8 rounded-lg shadow-xs">
+                        <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
                             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
                             <form className="space-y-6">
                                 <div>
@@ -88,7 +111,7 @@
                                         name="name"
                                         required
                                         className="w-full px-4 py-3 rounded-md border border-input bg-background focus:underline-hidden focus:ring-2 focus:ring-primary"
-                                        placeholder="Nguyen Duc Thang......"
+                                        placeholder="Nguyen Duc Thang ..."
                                      />
                                 </div>
 
@@ -117,9 +140,10 @@
 
                                 <button 
                                     type="submit" 
-                                    className={cn("cosmic-button w-full flex items-center justify-center grap-2")}
+                                    disabled={isSubmitting}
+                                    className={cn("cosmic-button w-full flex items-center justify-center gap-2")}
                                 >
-                                    Send Message 
+                                    {isSubmitting ? "Sending..." : "Send Message"}
                                     <Send size={16} />
                                 </button>
                             </form>
