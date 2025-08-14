@@ -11,7 +11,7 @@ export const Footer = () => {
             </p>
 
             <a href="#hero">
-                <ChevronUp size={35} className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors" />
+                <ChevronUp size={35} className="p-2 rounded-2xl bg-primary/10 hover:bg-primary/20 text-primary transition-colors" />
             </a>
         </footer>
     )
