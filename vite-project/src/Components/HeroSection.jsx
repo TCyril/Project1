@@ -25,7 +25,7 @@ export const HeroSection = () => {
                 
                  {/* Phần này dùng để viết về ý tưởng của website đang làm*/}
                 <p className="text-lg md:text-xl text-muted-forgound max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum dignissimos consequuntur in? Culpa magnam mollitia, odit ratione delectus accusamus labore voluptates quaerat facere praesentium consequatur voluptatibus in animi sapiente cupiditate!
+                    Tui là người yêu của Miuu hehe :33
                 </p>
 
                 <div className="pt-4 opacity-0 animate-fade-in-delay-4">
