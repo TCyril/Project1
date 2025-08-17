@@ -1,12 +1,12 @@
 import { ThemeToggle } from "../components/ThemeToggle";
-import { StarBackground } from "@/Components/StarBackground";
-import { Navbar } from "@/Components/Navbar";  
-import { HeroSection } from "@/Components/HeroSection";
-import { AboutSection } from "@/Components/AboutSection";
-import { SkillsSection } from "@/Components/SkillsSection";
-import { ProjectsSection } from "@/Components/ProjectsSection";
-import { ContactSection } from "@/Components/ContactSection";
-import { Footer } from "@/Components/Footer";
+import { StarBackground } from "@/components/StarBackground";
+import { Navbar } from "@/components/Navbar";  
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 export const Home = () => {
     return (
